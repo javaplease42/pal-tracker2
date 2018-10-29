@@ -15,12 +15,6 @@ public class EnvController {
     private final String memoryLimit;
     private String port;
 
-
-//    assertThat(env.get("PORT")).isEqualTo("8675");
-//    assertThat(env.get("")).isEqualTo("12G");
-//    assertThat(env.get("")).isEqualTo("34");
-//    assertThat(env.get("")).isEqualTo("123.sesame.street");
-
     public EnvController(@Value("${PORT:NOT SET}") String port,
                          @Value("${MEMORY_LIMIT:NOT SET}") String memoryLimit,
                          @Value("${CF_INSTANCE_INDEX:NOT SET}") String index,
