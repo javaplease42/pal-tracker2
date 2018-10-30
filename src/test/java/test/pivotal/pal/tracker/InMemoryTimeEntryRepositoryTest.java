@@ -27,6 +27,35 @@ public class InMemoryTimeEntryRepositoryTest {
         assertThat(readEntry).isEqualTo(expected);
     }
 
+//    @Test
+//    public void create_notEqual() throws Exception {
+//        InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
+//
+//        long projectId = 123L;
+//        long userId = 456L;
+//        TimeEntry createdTimeEntry = repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8));
+//
+//        assertThat(createdTimeEntry).isNotEqualTo(repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8)));
+//    }
+
+
+    @Test
+    public void create_fubar() throws Exception {
+        InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
+
+        long projectId = 123L;
+        long userId = 456L;
+        TimeEntry createdTimeEntry = repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8));
+
+        long timeEntryId = 1L;
+        TimeEntry expected = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-08"), 8);
+        assertThat(createdTimeEntry).isEqualTo(expected);
+        createdTimeEntry.setId(34L);
+
+        TimeEntry readEntry = repo.find(createdTimeEntry.getId());
+        assertThat(readEntry).isEqualTo(expected);
+    }
+
     @Test
     public void find() throws Exception {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
