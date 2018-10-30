@@ -37,6 +37,10 @@ public class InMemoryTimeEntryRepositoryTest {
 //
 //        assertThat(createdTimeEntry).isNotEqualTo(repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8)));
 //    }
+//
+//      cd ~/workspace/assignment-submission
+//     ./gradlew cloudNativeDeveloperRest -PserverUrl=https://pal-tracker-ratnakar.apps.pikes.pal.pivotal.io
+//
 
 
     @Test
