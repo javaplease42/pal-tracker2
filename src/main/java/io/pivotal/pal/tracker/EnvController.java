@@ -13,7 +13,7 @@ public class EnvController {
     private final String address;
     private final String index;
     private final String memoryLimit;
-    private String port;
+    private String port; 
 
     public EnvController(@Value("${PORT:NOT SET}") String port,
                          @Value("${MEMORY_LIMIT:NOT SET}") String memoryLimit,
