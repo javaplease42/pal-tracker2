@@ -3,6 +3,7 @@ package io.pivotal.pal.tracker;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -105,20 +106,25 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     public void delete(long id) {
 
+//        int index = -1;
+//        for (TimeEntry timeEntry: timeEntries) {
+//            if(timeEntry.getId() == id){
+//                index = timeEntries.indexOf(timeEntry);
+//            }
+//        }
+//
+//        if(index != -1) {
+//            timeEntries.remove(index);
+//        }
 
-        int index = -1;
-        for (TimeEntry timeEntry: timeEntries) {
-            if(timeEntry.getId() == id){
-                index = timeEntries.indexOf(timeEntry);
 
-            }
-
+        Iterator<TimeEntry> i = timeEntries.iterator();
+        while (i.hasNext()) {
+            TimeEntry s = i.next(); // must be called before you can call i.remove()
+            // Do something
+            i.remove();
         }
 
-        if(index != -1) {
-            timeEntries.remove(index);
-
-        }
 
     }
-}
+    }

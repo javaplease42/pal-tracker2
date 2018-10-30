@@ -49,6 +49,8 @@ public class TimeEntryController {
 
         return r;
 
+        // ./gradlew cloudNativeDeveloperRest -PserverUrl=https://pal-tracker-thomas-ratnakar.apps.pikes.pal.pivotal.io
+
     }
 
     @GetMapping("/time-entries")
